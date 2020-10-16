@@ -1,0 +1,145 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.goindiainfotech.kotlinmvvm"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'BASE_URL', "\"http://api.themoviedb.org/3/\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_KEY', MyApikey
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // OkHttp interceptors for logging
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    // Retrofit Scalars Converter
+
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.smarteist:autoimageslider:1.3.9-appcompat'
+
+
+    //Dagger hilt
+    implementation 'com.google.dagger:hilt-android:2.28-alpha'
+    kapt 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+
+
+    def nav_version = "2.3.0"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Feature module Support
+    //implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+
+    //searchViews
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+
+    //room dependency
+    def room_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    //animation
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.github.jakob-grabner:Circle-Progress-View:v1.3'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+
+
+
+    //videoplayer
+    //implementation 'com.github.tohodog:QSVideoPlayer:2.2.7'
+
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.4'
+
+    //implementation 'com.github.tuanhav95:DragView:1.1.0'
+    api "androidx.dynamicanimation:dynamicanimation:1.0.0"
+
+    //popupmenu
+    //implementation 'com.github.zawadz88.materialpopupmenu:material-popup-menu:3.1.0'
+    //implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.github.chahine:pageindicator:0.2.7'
+
+    implementation 'com.pawegio.kandroid:kandroid:0.8.7@aar'
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+}
+kapt {
+    correctErrorTypes true
+}

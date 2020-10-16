@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <item
+         android:title="Home"
+         android:id="@id/home_mv"
+         android:icon="@drawable/home"
+         android:menuCategory="secondary"/>
+
+
+    <item
+        android:title="About"
+        android:id="@id/about_mv"
+        android:icon="@drawable/about"
+        android:menuCategory="secondary"/>
+
+</menu>

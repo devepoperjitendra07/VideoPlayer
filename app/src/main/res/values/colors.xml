@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#595959</color>
+    <color name="colorPrimaryDark">#252525</color>
+    <color name="colorAccent">#5f8e5a</color>
+
+    <color name="white_color">#FFFFFF</color>
+
+    <color name="greylight">#b7b7b7</color>
+    <color name="lightgrybtn">#d5d5d5</color>
+    <color name="ligrey">#efefef</color>
+    <item name="gray_holo_light" type="color">#ffd0d0d0</item>
+    <item name="gralo_light" type="color">#cecece</item>
+    <color name="background">#dddddd</color>
+    <color name="black_new">#000000</color>
+    <color name="grey">#636363</color>
+    <color name="red_color">#FF0000</color>
+
+
+
+    <color name="colorPrimaryMedium">#353535</color>
+    <color name="colorAccentTransp">#845f8e5a</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteGray">#bfbfbf</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackTransp">#45000000</color>
+    <color name="blue_link">#3d8ae9</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

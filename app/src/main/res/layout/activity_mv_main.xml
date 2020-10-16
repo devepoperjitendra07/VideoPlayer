@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/drawer_layout"
+    android:background="@color/colorPrimaryMedium"
+    android:fitsSystemWindows="true"
+    tools:context=".themoviedb.ui.activities.main.MvMainActivity">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_bar_main"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbar_container"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimaryMedium" />
+
+             <!--   <com.miguelcatalan.materialsearchview.MaterialSearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edt_hint_search"
+                    app:searchBackIcon="@drawable/ic_arrow_back_black_24dp"
+                    app:searchBackground="@color/colorPrimary"
+                    android:textColor="@color/colorWhite"
+                    app:searchCloseIcon="@drawable/ic_close_black_24dp"
+                    android:id="@+id/search_toolbar"/>-->
+
+            </FrameLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/main_mv"
+            android:name="com.goindiainfotech.kotlinmvvm.themoviedb.ui.fragments.fragmentInjectionHelper.MainNavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:navGraph="@navigation/main_mv" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <com.goindiainfotech.kotlinmvvm.themoviedb.ui.custom.DragSource
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:height_when_max="300dp"
+        app:height_when_min="58dp"
+        app:state="CLOSE" />
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/main_mv"
+        android:id="@+id/navigationView">
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
