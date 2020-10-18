@@ -20,11 +20,8 @@ class ConstStrings {
 
         const val LANGUAGE = "language"
         const val PAGE = "page"
-        const val QUERY = "query"
         const val API_KEY = "api_key"
         const val REGION = "region"
-
-        const val CATEGORY = "category"
 
         const val MOVIE = "movie"
         const val TV = "tv"

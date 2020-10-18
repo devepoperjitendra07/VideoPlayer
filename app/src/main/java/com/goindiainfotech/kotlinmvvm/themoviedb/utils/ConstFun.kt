@@ -48,14 +48,6 @@ object ConstFun {
     fun getCountry(): String = Locale.getDefault().country
 
 
-    fun Activity.openDrawOverPermissionSetting() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return
-        Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, "package:$packageName".toUri()).also {
-            it.start(this)
-            animateActivity()
-        }
-    }
-
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun ImageView.setImageUrl(url: String) {
         Picasso.get().load(url)
@@ -64,8 +56,6 @@ object ConstFun {
                 .into(this)
     }
 
-    fun Activity.animateActivity() = overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-    
 
     @SuppressLint("StaticFieldLeak")
     fun Context.getUrlYoutube(key: String, setUrl:(url:String?)-> Unit){
@@ -83,8 +73,8 @@ object ConstFun {
   
 
     fun parallaxPageTransformer(vararg v : Int) : ViewPager.PageTransformer = ViewPager.PageTransformer { page, position ->
-        for (i in 0 until v.size){
-            val view = page.findViewById<View>(v[i])
+        for (element in v){
+            val view = page.findViewById<View>(element)
             if (view!=null) ViewCompat.setTranslationX(view,(page.width/1.5 * position).toFloat())
         }
     }

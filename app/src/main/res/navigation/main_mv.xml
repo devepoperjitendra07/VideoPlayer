@@ -13,9 +13,9 @@
         tools:layout="@layout/home_fragment"/>
     <fragment
         android:id="@+id/about_mv"
-        android:name="com.goindiainfotech.kotlinmvvm.fragments.About"
+        android:name="com.goindiainfotech.kotlinmvvm.themoviedb.ui.fragments.details.FragmentDetailsBottom"
         android:label="About"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_details_bottom" />
 
 
 </navigation>

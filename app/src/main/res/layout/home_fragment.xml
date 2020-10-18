@@ -28,7 +28,7 @@
                 android:gravity="center">
 
 
-                <com.goindiainfotech.kotlinmvvm.widget.CustomViewPagerScroll
+                <com.goindiainfotech.kotlinmvvm.themoviedb.utils.CustomViewPagerScroll
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
