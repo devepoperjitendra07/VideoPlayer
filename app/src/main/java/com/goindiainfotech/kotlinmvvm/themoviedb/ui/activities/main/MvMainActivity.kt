@@ -33,7 +33,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MvMainActivity : AppCompatActivity(), HomeFragment.Callback {
 
-    private var checkedItem = -1
 
     var navController: NavController? = null
     var appBarConfiguration: AppBarConfiguration? = null
@@ -110,7 +109,6 @@ class MvMainActivity : AppCompatActivity(), HomeFragment.Callback {
         return when (item.itemId) {
             R.id.nav_search -> {
                 Toast.makeText(this,"search click",Toast.LENGTH_LONG).show();
-                //makeAlDi()
                 true
             }
 
@@ -130,45 +128,14 @@ class MvMainActivity : AppCompatActivity(), HomeFragment.Callback {
     }
 
     override fun onBackPressed() {
-        if (drawer!!.isDrawerOpen(GravityCompat.START)) {
-            drawer!!.closeDrawer(GravityCompat.START)
+        if (drawer_layout!!.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout!!.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
     }
 
 
-
-    private fun makeAlDi(){
-
-        // setup the alert builder
-        // setup the alert builder
-        val builder = AlertDialog.Builder(this@MvMainActivity)
-        builder.setTitle("Choose an animal")
-        // add a radio button list
-        // add a radio button list
-        val animals = arrayOf("horse", "cow", "camel", "sheep", "goat")
-        // cow
-
-        builder.setSingleChoiceItems(animals, checkedItem) { dialog, which ->
-            checkedItem = which
-            Toast.makeText(this@MvMainActivity,animals[checkedItem],Toast.LENGTH_LONG).show()
-            // user checked an item
-        }
-        // add OK and Cancel buttons
-        // add OK and Cancel buttons
-        builder.setPositiveButton("OK") { dialog, which ->
-            // user clicked OK
-            //checkedItem = which
-            //Toast.makeText(this@MvMainActivity,animals[checkedItem],Toast.LENGTH_LONG).show()
-        }
-        builder.setNegativeButton("Cancel", null)
-        // create and show the alert dialog
-        // create and show the alert dialog
-        val dialog = builder.create()
-        dialog.show()
-
-    }
 
     override fun setMaximizeDraggable(id: Int, name: String, type: String, image: String) {
         Toast.makeText(applicationContext, type + " :: " + name, Toast.LENGTH_LONG).show()
